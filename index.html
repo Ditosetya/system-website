@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090f1f" id="themeColorMeta">
+  <meta name="description" content="Portofolio proyek Sistem Informasi.">
+  <link rel="icon" type="image/png" href="webpage-list.png">
+  <title>TI - Teknologi Informasi</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('si-projectspace-theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches
+        ? 'light'
+        : 'dark';
+      document.documentElement.dataset.theme =
+        savedTheme || preferredTheme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Gambar proyek dari file lokal */
+    .project-art { height: 230px; position: relative; overflow: hidden; background: #14243c; border-bottom: 1px solid var(--line); }
+    .project-art::after { display: none; }
+    .project-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .45s ease; }
+
+    /* Seluruh kartu merupakan tautan */
+    a.project-card { display: block; width: 100%; color: inherit; text-decoration: none; cursor: pointer; }
+    a.project-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
+    a.project-card:hover .project-image { transform: scale(1.035); }
+
+    /* Tampilan Lihat Detail */
+    .detail-link { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 17px; padding: 12px 0 0; border-top: 1px solid var(--line); background: none; color: #dce9fa; font-size: 10px; font-weight: 700; text-align: left; }
+    .detail-link span { font-size: 15px; color: var(--cyan); transition: transform .2s ease; }
+    a.project-card:hover .detail-link span { transform: translate(3px, -3px); }
+    html[data-theme="light"] .detail-link { color: #17263d; border-top-color: var(--line); }
+    @media (max-width: 720px) {
+      .project-art {
+        height: 220px;
+      }
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigasi utama">
+      <a class="brand" href="#projects">
+        <span class="brand-mark">TI</span>
+        <span class="brand-name">
+          Teknologi Informasi<span>Web Application</span>
+        </span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link active" href="https://ditosetya.github.io/setya-portfolio/">Kembali</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti ke mode terang" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☼</span>
+          <span class="theme-toggle-label">Mode terang</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- DAFTAR PROYEK -->
+  <main>
+    <section class="projects-section section-pad" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Eksplorasi <span class="gradient-text">proyek.</span></h2>
+            <p class="section-description">Kumpulan proyek Sistem Informasi yang menampilkan penerapan teknologi, pengolahan data, dan perancangan pengalaman saya.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT GRID -->
+        <div class="project-grid" id="projectGrid">
+
+          <!-- PROJECT 01 || SHARFO SUDUT WISATA -->
+          <a class="project-card project-library" href="Sharfo-Sudut-Wisata/index.html" aria-label="Buka Sistem Informasi Perpustakaan">
+            <div class="project-art">
+              <img class="project-image" src="Sharfo-Sudut-Wisata/assets/Judul-Sharfo-Sudut-Wisata.png" alt="Screenshot Sistem Informasi Perpustakaan" loading="lazy" decoding="async">
+            </div>
+            <div class="project-info">
+              <div class="project-type">
+                <span>WEB DEVELOPMENT</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3>Sharfo Sudut Wisata</h3>
+              <p>Memberikan pengguna untuk membagikan macam-macam wisata di seluruh dunia.</p>
+              <div class="tag-row">
+                <span>CSS</span>
+                <span>JS</span>
+                <span>PHP</span>
+                <span>SQL</span>
+              </div>
+              <div class="detail-link">Lihat detail <span>↗</span></div>
+            </div>
+          </a>
+
+          <!-- PROJECT 02 || BANTUAN SISWA C45 -->
+          <a class="project-card project-dashboard" href="Bantuan-Siswa-C45/index.html" aria-label="Buka Dashboard Analisis Penjualan">
+            <div class="project-art">
+              <img class="project-image" src="Bantuan-Siswa-C45/assets/Judul-Bantuan-Siswa-C45.png" alt="Screenshot Dashboard Analisis Penjualan" loading="lazy" decoding="async">
+            </div>
+            <div class="project-info">
+              <div class="project-type">
+                <span>ARTIFICIAL INTELLIGENCE (AI) &amp; MACHINE LEARNING</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3>Bantuan Siswa C4.5</h3>
+              <p>Sistem Website yang berguna untuk mengklasifikasikan bantuan sosial siswa menggunakan c4.5</p>
+              <div class="tag-row">
+                <span>PHP</span>
+                <span>Python</span>
+                <span>SQL</span>
+              </div>
+              <div class="detail-link">Lihat detail <span>↗</span></div>
+            </div>
+          </a>
+
+          <!-- PROJECT 03 || COMING SOON -->
+          <a class="project-card project-kasir" href="#" aria-label="Buka Desain UI/UX Aplikasi Kasir">
+            <div class="project-art">
+              <img class="project-image" src="coming-soon.png" alt="Screenshot Desain UI/UX Aplikasi Kasir" loading="lazy" decoding="async">
+            </div>
+            <div class="project-info">
+              <div class="project-type">
+                <span>COMING SOON</span>
+                <span class="project-year">-</span>
+              </div>
+              <h3>Coming Soon</h3>
+              <p>-.</p>
+              <div class="tag-row">
+                <span>-</span>
+              </div>
+              <div class="detail-link">Lihat detail <span>↗</span></div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Designed to connect ideas, people &amp; technology.</p>
+      <span class="copyright">© <span id="currentYear">2026</span> Setya</span>
+    </div>
+  </footer>
+</body>
+</html>

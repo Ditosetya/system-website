@@ -1,0 +1,151 @@
+No,Nama Siswa,Pendidikan Siswa,Jumlah Saudara Sekolah,Pekerjaan Ayah,Pendidikan Akhir Ayah,Pekerjaan Ibu,Pendidikan Akhir Ibu,Penerima PIP,Status Orang Tua,Kehadiran Siswa,Status
+1,Adi Pratama,SD,Banyak,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+2,Budi Santoso,MI,Sedang,Nelayan,Rendah,Buruh,Rendah,Tidak,Lengkap,Sedang,Layak
+3,Citra Lestari,SD,Tidak Ada,PNS/TNI/POLRI,Tinggi,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+4,Dedi Kurniawan,MI,Sedang,Karyawan Swasta,Sedang,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+5,Eka Putri,SD,Banyak,Buruh,Rendah,Buruh,Rendah,Ya,Lengkap,Rendah,Layak
+6,Fajar Siddiq,MI,Sedang,Wiraswasta,Sedang,Pedagang Kecil,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+7,Gita Permata,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Yatim,Tinggi,Tidak Layak
+8,Hendi Suherman,MI,Banyak,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+9,Indah Sari,SD,Sedang,Karyawan BUMN,Tinggi,Karyawan BUMN,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+10,Joko Susilo,MI,Tidak Ada,Sudah Meninggal,Sedang,Ibu Rumah Tangga,Rendah,Ya,Yatim,Rendah,Layak
+11,Kurniawati,SD,Sedang,Peternak,Rendah,Peternak,Rendah,Ya,Lengkap,Tinggi,Layak
+12,Lutfi Hakim,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Sedang,Layak
+13,Maya Amelia,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+14,Nanang Kosim,MI,Tidak Ada,Tidak Bekerja,Rendah,Buruh,Rendah,Ya,Lengkap,Rendah,Layak
+15,Olivia Putri,SD,Sedang,Wirausaha,Tinggi,Wirausaha,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+16,Panji Asmoro,MI,Banyak,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+17,Qori Anisa,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Piatu,Tinggi,Tidak Layak
+18,Rian Hidayat,MI,Tidak Ada,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+19,Siska Rani,SD,Banyak,Buruh,Rendah,Sudah Meninggal,Rendah,Ya,Piatu,Rendah,Layak
+20,Taufik Hidayat,MI,Sedang,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+21,Ulfa Maria,SD,Banyak,Pedagang Kecil,Rendah,Pedagang Kecil,Rendah,Ya,Lengkap,Sedang,Layak
+22,Vina Panduwinata,MI,Tidak Ada,Karyawan BUMN,Tinggi,PNS/TNI/POLRI,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+23,Wahyu Setiawan,SD,Sedang,Wiraswasta,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Yatim,Tinggi,Tidak Layak
+24,Xena Clarissa,MI,Banyak,Sudah Meninggal,Rendah,Sudah Meninggal,Rendah,Ya,Yatim Piatu,Rendah,Layak
+25,Yoga Pratama,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+26,Zahra Amelia,MI,Tidak Ada,Wirausaha,Tinggi,Wirausaha,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+27,Ahmad Dhani,SD,Banyak,Buruh,Rendah,Tenaga Kerja Indonesia,Rendah,Ya,Lengkap,Sedang,Layak
+28,Bella Shofie,MI,Sedang,PNS/TNI/POLRI,Tinggi,Karyawan Swasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+29,Candra Wijaya,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Piatu,Tinggi,Tidak Layak
+30,Dina Larasati,MI,Sedang,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+31,Erlangga,SD,Banyak,Petani,Rendah,Buruh,Rendah,Ya,Lengkap,Rendah,Layak
+32,Fitri Handayani,MI,Sedang,Wiraswasta,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+33,Gilang Dirga,SD,Tidak Ada,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Tinggi,Layak
+34,Hana Pertiwi,MI,Banyak,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Sedang,Tidak Layak
+35,Irfan Hakim,SD,Sedang,Karyawan BUMN,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+36,Julia Perez,MI,Tidak Ada,Sudah Meninggal,Rendah,Buruh,Rendah,Ya,Yatim,Rendah,Layak
+37,Kevin Sanjaya,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+38,Luna Maya,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Tenaga Kerja Indonesia,Rendah,Tidak,Lengkap,Tinggi,Layak
+39,Mahendra,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+40,Nina Zatulini,MI,Tidak Ada,Tidak Bekerja,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+41,Oscar Lawalata,SD,Sedang,Wirausaha,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+42,Putri Titian,MI,Banyak,Nelayan,Rendah,Nelayan,Rendah,Ya,Lengkap,Rendah,Layak
+43,Qibil,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+44,Raffi Ahmad,MI,Tidak Ada,Karyawan Swasta,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+45,Syahrini,SD,Banyak,Buruh,Rendah,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+46,Teuku Wisnu,MI,Sedang,Petani,Rendah,Petani,Rendah,Ya,Lengkap,Sedang,Layak
+47,Ussy Sulistiawaty,SD,Banyak,Pedagang Kecil,Rendah,Pedagang Kecil,Rendah,Tidak,Lengkap,Tinggi,Layak
+48,Verrell Bramasta,MI,Tidak Ada,Karyawan BUMN,Tinggi,Karyawan BUMN,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+49,Wulan Guritno,SD,Sedang,Wiraswasta,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Yatim,Tinggi,Tidak Layak
+50,Yudha Keling,MI,Banyak,Sudah Meninggal,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Rendah,Layak
+51,Zaskia Adya,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+52,Aliando,MI,Tidak Ada,Wirausaha,Tinggi,Wirausaha,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+53,Bastian Steel,SD,Banyak,Buruh,Rendah,Buruh,Rendah,Ya,Lengkap,Sedang,Layak
+54,Chelsea Olivia,MI,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+55,Dimas Anggara,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Piatu,Tinggi,Tidak Layak
+56,Enzy Storia,MI,Sedang,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+57,Febby Rastanty,SD,Banyak,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+58,Gading Marten,MI,Sedang,Wiraswasta,Sedang,Wiraswasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+59,Hesti Purwadinata,SD,Tidak Ada,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Tinggi,Layak
+60,Isyana Sarasvati,MI,Banyak,Karyawan Swasta,Tinggi,PNS/TNI/POLRI,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+61,Jefri Nichol,SD,Sedang,Karyawan BUMN,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+62,Kiky Saputri,MI,Tidak Ada,Sudah Meninggal,Rendah,Buruh,Rendah,Ya,Yatim,Rendah,Layak
+63,Lukman Sardi,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Layak
+64,Maudy Ayunda,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Layak
+65,Nicholas Saputra,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+66,Onadio Leonardo,MI,Tidak Ada,Tidak Bekerja,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+67,Prilly Latuconsina,SD,Sedang,Wirausaha,Tinggi,Wirausaha,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+68,Raditya Dika,MI,Banyak,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+69,Sule,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+70,Titi Kamal,MI,Tidak Ada,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+71,Umay Shahab,SD,Banyak,Buruh,Rendah,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+72,Vino G Bastian,MI,Sedang,Petani,Rendah,Petani,Rendah,Ya,Lengkap,Sedang,Layak
+73,Wendy Cagur,SD,Banyak,Pedagang Kecil,Rendah,Pedagang Kecil,Rendah,Tidak,Lengkap,Tinggi,Layak
+74,Yuki Kato,MI,Tidak Ada,Karyawan BUMN,Tinggi,Karyawan BUMN,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+75,Zaskia Sungkar,SD,Sedang,Wiraswasta,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Yatim,Tinggi,Tidak Layak
+76,Ari Lasso,MI,Banyak,Sudah Meninggal,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Rendah,Layak
+77,Bunga Citra,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+78,Chicco Jerikho,MI,Tidak Ada,Wirausaha,Tinggi,Wirausaha,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+79,Deddy Corbuzier,SD,Banyak,Buruh,Rendah,Buruh,Rendah,Ya,Lengkap,Sedang,Layak
+80,Esti,MI,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+81,Fachri Albar,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Piatu,Tinggi,Tidak Layak
+82,Gisella Anastasia,MI,Sedang,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+83,Hamish Daud,SD,Banyak,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+84,Iqbaal Ramadhan,MI,Sedang,Wiraswasta,Sedang,Wiraswasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+85,Joe Taslim,SD,Tidak Ada,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Tinggi,Layak
+86,Krisdayanti,MI,Banyak,Karyawan Swasta,Tinggi,PNS/TNI/POLRI,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+87,Laudya Cynthia,SD,Sedang,Karyawan BUMN,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+88,Morgan Oey,MI,Tidak Ada,Sudah Meninggal,Rendah,Buruh,Rendah,Ya,Yatim,Rendah,Layak
+89,Najwa Shihab,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Layak
+90,Oka Antara,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Layak
+91,Pevita Pearce,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+92,Rio Dewanto,MI,Tidak Ada,Tidak Bekerja,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+93,Sandra Dewi,SD,Sedang,Wirausaha,Tinggi,Wirausaha,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+94,Tara Basro,MI,Banyak,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+95,Ungu,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+96,Velove Vexia,MI,Tidak Ada,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+97,Widi Mulia,SD,Banyak,Buruh,Rendah,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+98,Yama Carlos,MI,Sedang,Petani,Rendah,Petani,Rendah,Ya,Lengkap,Sedang,Layak
+99,Zee Zee Shahab,SD,Banyak,Pedagang Kecil,Rendah,Pedagang Kecil,Rendah,Tidak,Lengkap,Tinggi,Layak
+100,Afgan Syahreza,MI,Tidak Ada,Karyawan BUMN,Tinggi,Karyawan BUMN,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+101,Boy William,SD,Sedang,Wiraswasta,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Yatim,Tinggi,Tidak Layak
+102,Cinta Laura,MI,Banyak,Sudah Meninggal,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Rendah,Layak
+103,Dion Wiyoko,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+104,Enno Lerian,MI,Tidak Ada,Wirausaha,Tinggi,Wirausaha,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+105,Ferry Salim,SD,Banyak,Buruh,Rendah,Buruh,Rendah,Ya,Lengkap,Sedang,Layak
+106,Gracia Indri,MI,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+107,Herjunot Ali,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Piatu,Tinggi,Tidak Layak
+108,Iis Dahlia,MI,Sedang,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+109,Jono Armstrong,SD,Banyak,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+110,Kartika Putri,MI,Sedang,Wiraswasta,Sedang,Wiraswasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+111,Lucky Hakim,SD,Tidak Ada,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Tinggi,Layak
+112,Melly Goeslaw,MI,Banyak,Karyawan Swasta,Tinggi,PNS/TNI/POLRI,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+113,Nikita Mirzani,SD,Sedang,Karyawan BUMN,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+114,Onky Alexander,MI,Tidak Ada,Sudah Meninggal,Rendah,Buruh,Rendah,Ya,Yatim,Rendah,Layak
+115,Paramitha Rusady,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Layak
+116,Roy Marten,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Layak
+117,Shandy Aulia,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+118,Tompi,MI,Tidak Ada,Tidak Bekerja,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+119,Unique Priscilla,SD,Sedang,Wirausaha,Tinggi,Wirausaha,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+120,Venna Melinda,MI,Banyak,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+121,Wingky Wiryawan,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+122,Yuni Shara,MI,Tidak Ada,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+123,Zumi Zola,SD,Banyak,Buruh,Rendah,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+124,Ammar Zoni,MI,Sedang,Petani,Rendah,Petani,Rendah,Ya,Lengkap,Sedang,Layak
+125,Bio One,SD,Banyak,Pedagang Kecil,Rendah,Pedagang Kecil,Rendah,Tidak,Lengkap,Tinggi,Layak
+126,Caesar Hito,MI,Tidak Ada,Karyawan BUMN,Tinggi,Karyawan BUMN,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+127,Dude Harlino,SD,Sedang,Wiraswasta,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Yatim,Tinggi,Tidak Layak
+128,Ersa Mayori,MI,Banyak,Sudah Meninggal,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Rendah,Layak
+129,Feby Febiola,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+130,Ginanjar,MI,Tidak Ada,Wirausaha,Tinggi,Wirausaha,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+131,Haykal Kamil,SD,Banyak,Buruh,Rendah,Buruh,Rendah,Ya,Lengkap,Sedang,Layak
+132,Irwansyah,MI,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+133,Jeremy Thomas,SD,Tidak Ada,Pensiunan,Sedang,Ibu Rumah Tangga,Rendah,Tidak,Piatu,Tinggi,Tidak Layak
+134,Kimberly Ryder,MI,Sedang,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Tinggi,Layak
+135,Limbad,SD,Banyak,Petani,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+136,Marcel Chandrawinata,MI,Sedang,Wiraswasta,Sedang,Wiraswasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+137,Nikita Willy,SD,Tidak Ada,Pedagang Kecil,Rendah,Ibu Rumah Tangga,Rendah,Ya,Yatim,Tinggi,Layak
+138,Okan Cornelius,MI,Banyak,Karyawan Swasta,Tinggi,PNS/TNI/POLRI,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+139,Paula Verhoeven,SD,Sedang,Karyawan BUMN,Tinggi,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+140,Quinn Salman,MI,Tidak Ada,Sudah Meninggal,Rendah,Buruh,Rendah,Ya,Yatim,Rendah,Layak
+141,Ringgo Agus,SD,Sedang,Peternak,Rendah,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Layak
+142,Samuel Zylgwyn,MI,Banyak,Tenaga Kerja Indonesia,Sedang,Ibu Rumah Tangga,Sedang,Tidak,Lengkap,Tinggi,Layak
+143,Tyas Mirasih,SD,Sedang,Pedagang Besar,Tinggi,Wiraswasta,Tinggi,Tidak,Lengkap,Tinggi,Tidak Layak
+144,Uus,MI,Tidak Ada,Tidak Bekerja,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Sedang,Layak
+145,Vicky Prasetyo,SD,Sedang,Wirausaha,Tinggi,Wirausaha,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+146,Winky Wiryawan,MI,Banyak,Nelayan,Rendah,Ibu Rumah Tangga,Rendah,Ya,Lengkap,Rendah,Layak
+147,Young Lex,SD,Sedang,PNS/TNI/POLRI,Tinggi,Ibu Rumah Tangga,Rendah,Tidak,Lengkap,Tinggi,Tidak Layak
+148,Ziva Magnolya,MI,Tidak Ada,Karyawan Swasta,Sedang,Karyawan Swasta,Sedang,Tidak,Lengkap,Tinggi,Tidak Layak
+149,Anang Hermansyah,SD,Banyak,Buruh,Rendah,Ibu Rumah Tangga,Rendah,Ya,Piatu,Tinggi,Layak
+150,Ashanty,MI,Sedang,Petani,Rendah,Petani,Rendah,Ya,Lengkap,Sedang,Layak

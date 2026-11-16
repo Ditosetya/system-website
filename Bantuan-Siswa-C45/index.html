@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b63">
+  <meta name="description" content="Sistem klasifikasi penerima bantuan siswa menggunakan algoritma C4.5.">
+  <link rel="icon" type="image/png" href="social-care.png">
+  <title>BANSOS C4.5 — Sistem Klasifikasi Bantuan Siswa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/seed-data.js"></script>
+  <script defer src="js/model-data.js"></script>
+  <script defer src="js/c45.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-decoration auth-decoration-one"></div>
+    <div class="auth-decoration auth-decoration-two"></div>
+    <section class="auth-card">
+      <div class="auth-heading">
+        <h1 id="authTitle">Selamat datang di<br>Sistem Bansos</h1>
+      </div>
+      <form id="authForm" class="form-stack">
+        <div class="field-group">
+          <input id="authUsername" name="username" type="text" autocomplete="username" placeholder="Username" required>
+        </div>
+        <div class="field-group">
+          <input id="authPassword" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+        </div>
+        <div class="field-group hidden" id="confirmPasswordGroup">
+          <label for="authConfirmPassword">Konfirmasi password</label>
+          <input id="authConfirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Ulangi password">
+        </div>
+        <p id="authError" class="form-error hidden" role="alert"></p>
+        <button class="button button-primary button-full" id="authSubmit" type="submit">Masuk<span aria-hidden="true">→</span></button>
+      </form>
+      <a class="auth-back-link" id="authBackLink" href="../index.html">
+        <span>Kembali</span>
+      </a>
+    </section>
+  </div>
+
+  <div id="appShell" class="app-shell hidden">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="site-brand">BANSOS C4.5</div>
+
+        <nav class="site-nav" aria-label="Navigasi utama">
+          <button class="nav-link active" data-page="dashboard" type="button">Beranda</button>
+          <button class="nav-link" data-page="records" type="button">Klasifikasi</button>
+          <button class="nav-link" data-page="accuracy" type="button">Akurasi</button>
+        </nav>
+
+        <div class="site-header-right">
+          <span class="site-date" id="currentDate">-</span>
+          <span class="site-header-divider" aria-hidden="true"></span>
+          <div class="site-profile">
+            <span class="site-profile-name" id="profileName">admin</span>
+            <span class="site-avatar" id="profileAvatar">A</span>
+          </div>
+          <button class="nav-link nav-logout" id="logoutButton" type="button">Keluar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-area">
+      <div class="main-container">
+        <h1 id="pageTitle" class="layout-page-title">Halaman Utama</h1>
+        <section id="pageContent" class="page-content" tabindex="-1"></section>
+      </div>
+      <footer class="app-footer">
+        <span>© <span id="footerYear"></span> BANSOS C4.5</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
