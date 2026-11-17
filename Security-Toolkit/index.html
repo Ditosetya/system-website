@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Toolkit keamanan browser untuk enkripsi AES-256-GCM, dekripsi, hash SHA-2, dan generator acak kriptografis.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#f5f8fc">
+  <title>Security Toolkit</title>
+  <link rel="icon" type="image/png" href="assets/cyber-security.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-copy"><h2>Security Toolkit</h2></span>
+      </a>
+      <div class="topbar-meta">
+        <span class="privacy-chip"><span class="dot"></span> Pemrosesan lokal</span>
+        <a class="btn btn-back" id="backLink" href="../index.html">Kembali</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="eyebrow">ENCRYPTION · INTEGRITY · RANDOMNESS</div>
+        <h1>Perlindungan data, langsung di browser.</h1>
+        <p>Enkripsi dan dekripsi file maupun teks, periksa hash SHA-2, serta buat password dan byte acak secara lokal tanpa mengirim data ke server.</p>
+      </section>
+
+      <section class="workspace" aria-label="Toolkit keamanan">
+        <nav class="main-tabs" role="tablist" aria-label="Kategori alat">
+          <button class="main-tab active" id="tab-vault" type="button" role="tab" aria-selected="true" aria-controls="panel-vault" data-tab="vault"><span>01</span> Vault</button>
+          <button class="main-tab" id="tab-hash" type="button" role="tab" aria-selected="false" aria-controls="panel-hash" data-tab="hash"><span>02</span> Hash & Integrity</button>
+          <button class="main-tab" id="tab-random" type="button" role="tab" aria-selected="false" aria-controls="panel-random" data-tab="random"><span>03</span> Random Generator</button>
+          <button class="main-tab" id="tab-coming-soon" type="button" role="tab" aria-selected="false" aria-controls="panel-coming-soon" data-tab="coming-soon"><span>04</span> Coming Soon</button>
+        </nav>
+
+        <div id="vaultStatus" class="status-line global-status" role="status" aria-live="polite"><span class="status-dot"></span><span>Siap. Proses data tetap berada di browser ini.</span></div>
+
+        <section class="main-panel" id="panel-vault" role="tabpanel" aria-labelledby="tab-vault">
+          <div class="panel-heading">
+            <div><span class="eyebrow">ENCRYPTION WORKSPACE</span><h2>Triple-Layer Crypto Vault</h2><p>Enkripsi berlapis dengan autentikasi data menggunakan Web Crypto API.</p></div>
+            <span class="algorithm-tag">AES-256-GCM × 3</span>
+          </div>
+
+          <section class="key-card" aria-labelledby="keyTitle">
+            <div class="key-card-heading"><div><span class="eyebrow">KEY MANAGEMENT</span><h3 id="keyTitle">Password utama</h3></div><span class="key-lock" aria-hidden="true">◆</span></div>
+            <div class="field">
+              <label for="secretKey">Password enkripsi / dekripsi</label>
+              <div class="input-with-action">
+                <input id="secretKey" type="password" autocomplete="new-password" maxlength="256" spellcheck="false" placeholder="Masukkan password yang panjang dan unik">
+                <button type="button" class="btn btn-ghost" id="togglePassword" aria-label="Tampilkan password">Lihat</button>
+              </div>
+              <div class="strength-row">
+                <div class="strength-meter" aria-label="Indikator kekuatan password"><span></span><span></span><span></span><span></span><span></span></div>
+                <span id="strengthLabel" class="muted-text">Belum ada password</span>
+              </div>
+              <p class="field-hint">Gunakan minimal 12 karakter; lebih disarankan 16–24 karakter atau password acak. Penilaian kekuatan merupakan heuristik, bukan audit kebocoran password.</p>
+            </div>
+            <div class="key-actions">
+              <button type="button" class="btn btn-secondary" id="generatePassword">Buat password acak</button>
+              <button type="button" class="btn btn-ghost" id="clearKey">Bersihkan kunci</button>
+            </div>
+            <div class="field confirm-field" id="confirmWrap">
+              <label for="confirmPassword">Konfirmasi password saat enkripsi</label>
+              <input id="confirmPassword" type="password" autocomplete="new-password" maxlength="256" spellcheck="false" placeholder="Ketik ulang password yang sama">
+            </div>
+            <div class="kdf-note"><span class="note-icon">i</span><span><strong>Key derivation:</strong> PBKDF2-HMAC-SHA-256 · 600.000 iterasi, lalu HKDF untuk membuat tiga kunci AES terpisah.</span></div>
+          </section>
+
+          <div class="subtabs" role="tablist" aria-label="Jenis data Vault">
+            <button type="button" class="subtab active" id="textModeTab" role="tab" aria-selected="true" aria-controls="textModePanel" data-mode="text">Enkripsi teks</button>
+            <button type="button" class="subtab" id="fileModeTab" role="tab" aria-selected="false" aria-controls="fileModePanel" data-mode="file">Enkripsi file</button>
+          </div>
+
+          <section id="textModePanel" class="mode-panel" role="tabpanel" aria-labelledby="textModeTab">
+            <div class="grid-two">
+              <div class="field">
+                <div class="label-row"><label for="inputText">Input teks / kode Vault</label><span id="inputCount" class="counter">0 karakter</span></div>
+                <textarea id="inputText" class="code-area" spellcheck="false" maxlength="16000000" placeholder="Tulis pesan yang ingin dienkripsi atau tempel kode TVLT2. untuk didekripsi..."></textarea>
+                <p class="field-hint">Maksimal 10 MB teks UTF-8. Dekripsi mendukung format TVLT2 dan teks terenkripsi dari versi lama.</p>
+              </div>
+              <div class="field">
+                <div class="label-row"><label for="outputText">Output</label><span class="output-indicator">READ ONLY</span></div>
+                <textarea id="outputText" class="code-area" spellcheck="false" readonly placeholder="Hasil enkripsi atau dekripsi muncul di sini..."></textarea>
+                <p class="field-hint">Kode TVLT2 dapat disimpan sebagai file .vault atau disalin untuk dikirim melalui saluran yang aman.</p>
+              </div>
+            </div>
+            <div class="action-row">
+              <button type="button" class="btn btn-primary operation" id="encryptTextBtn">♢ Enkripsi 3 lapis</button>
+              <button type="button" class="btn btn-blue operation" id="decryptTextBtn">↧ Dekripsi</button>
+              <button type="button" class="btn btn-secondary" id="copyOutputBtn">Salin output</button>
+              <button type="button" class="btn btn-secondary" id="downloadOutputBtn">Unduh .vault</button>
+              <button type="button" class="btn btn-ghost" id="clearTextBtn">Bersihkan</button>
+            </div>
+          </section>
+
+          <section id="fileModePanel" class="mode-panel" role="tabpanel" aria-labelledby="fileModeTab" hidden>
+            <div class="grid-two">
+              <article class="file-action-card">
+                <div class="card-icon green-icon">↑</div>
+                <h3>Enkripsi file</h3>
+                <p>Pilih satu atau beberapa file. Setiap file diproses menjadi file .vault tersendiri.</p>
+                <label class="file-drop" for="filesToEncrypt"><span class="file-drop-icon">＋</span><strong>Pilih file untuk dienkripsi</strong><small>Multi-file · maksimum 100 MB per file</small><input id="filesToEncrypt" type="file" multiple></label>
+                <div id="encryptFilesInfo" class="file-list-info">Belum ada file dipilih.</div>
+                <button type="button" class="btn btn-primary operation btn-block" id="encryptFilesBtn">Enkripsi file terpilih</button>
+              </article>
+              <article class="file-action-card">
+                <div class="card-icon blue-icon">↓</div>
+                <h3>Dekripsi file</h3>
+                <p>Pilih satu atau beberapa file .vault. File asli dipulihkan setelah autentikasi berhasil.</p>
+                <label class="file-drop" for="filesToDecrypt"><span class="file-drop-icon">＋</span><strong>Pilih file Vault</strong><small>Multi-file · maksimum 101 MB per vault</small><input id="filesToDecrypt" type="file" multiple></label>
+                <div id="decryptFilesInfo" class="file-list-info">Belum ada file dipilih.</div>
+                <button type="button" class="btn btn-blue operation btn-block" id="decryptFilesBtn">Dekripsi file terpilih</button>
+              </article>
+            </div>
+            <div class="progress-wrap" id="progressWrap" hidden>
+              <div class="progress-heading"><strong id="progressLabel">Memproses file...</strong><span id="progressCount">0 / 0</span></div>
+              <progress class="progress-track" id="progressBar" max="100" value="0">0%</progress>
+            </div>
+            <p class="field-hint batch-note">Pemrosesan dilakukan satu per satu di browser. Izinkan beberapa unduhan pada notifikasi browser jika Anda memproses banyak file. File besar membutuhkan RAM tambahan karena diproses di memori.</p>
+          </section>
+
+
+          <div class="disclaimer-strip"><strong>Catatan:</strong> AES-GCM memverifikasi integritas ciphertext. Password yang hilang tidak dapat dipulihkan. Simpan file hasil dan password secara terpisah.</div>
+        </section>
+
+        <section class="main-panel" id="panel-hash" role="tabpanel" aria-labelledby="tab-hash" hidden>
+          <div class="panel-heading"><div><span class="eyebrow">DATA FINGERPRINT</span><h2>Hash & Integrity Checker</h2><p>Buat fingerprint digital untuk membandingkan file atau teks. Hash bukan enkripsi dan tidak dapat diubah kembali menjadi data asli.</p></div><span class="algorithm-tag">SHA-2</span></div>
+          <div class="field compact-field"><label for="hashAlgorithm">Algoritma hash</label><select id="hashAlgorithm"><option value="SHA-256">SHA-256 (256-bit)</option><option value="SHA-384">SHA-384 (384-bit)</option><option value="SHA-512">SHA-512 (512-bit)</option></select></div>
+          <div class="subtabs hash-source-tabs" role="tablist" aria-label="Sumber hash"><button type="button" class="subtab active" data-hash-source="text" id="hashTextTab" aria-selected="true">Hash teks</button><button type="button" class="subtab" data-hash-source="file" id="hashFileTab" aria-selected="false">Hash file</button></div>
+          <section id="hashTextSource" class="hash-source-panel"><div class="field"><label for="hashTextInput">Teks yang akan di-hash</label><textarea id="hashTextInput" class="code-area" placeholder="Masukkan teks..."></textarea></div></section>
+          <section id="hashFileSource" class="hash-source-panel" hidden><div class="field"><label for="hashFileInput">Pilih file</label><input id="hashFileInput" class="file-input" type="file"><p id="hashFileInfo" class="field-hint">Belum ada file dipilih. Maksimum 100 MB.</p></div></section>
+          <div class="action-row"><button type="button" class="btn btn-primary" id="calculateHashBtn">Hitung hash</button><button type="button" class="btn btn-secondary" id="clearHashBtn">Bersihkan</button></div>
+          <div class="hash-result-card"><div class="label-row"><label for="hashResult">Hasil fingerprint</label><span id="hashAlgorithmLabel" class="output-indicator">SHA-256</span></div><textarea id="hashResult" class="hash-output" readonly spellcheck="false" placeholder="Hash hex akan muncul di sini..."></textarea><button type="button" class="btn btn-secondary btn-small" id="copyHashBtn">Salin hash</button></div>
+          <div class="field compare-field"><label for="expectedHash">Bandingkan dengan hash yang diharapkan</label><input id="expectedHash" type="text" spellcheck="false" placeholder="Tempel hash pembanding di sini"><div class="action-row compact-actions"><button type="button" class="btn btn-blue" id="compareHashBtn">Verifikasi fingerprint</button><span id="compareResult" class="compare-result" aria-live="polite">Belum diverifikasi.</span></div></div>
+          <div class="disclaimer-strip"><strong>Penggunaan:</strong> cocok untuk memeriksa apakah file berubah setelah dipindahkan atau diunduh. SHA-2 umum tidak menggantikan HMAC atau tanda tangan digital untuk autentikasi sumber.</div>
+        </section>
+
+        <section class="main-panel" id="panel-random" role="tabpanel" aria-labelledby="tab-random" hidden>
+          <div class="panel-heading"><div><span class="eyebrow">CRYPTOGRAPHIC RANDOMNESS</span><h2>Random Generator</h2><p>Membuat password dan byte acak menggunakan sumber acak kriptografis dari browser.</p></div><span class="algorithm-tag">CSPRNG</span></div>
+          <section class="tool-card">
+            <div class="tool-card-heading"><div><span class="eyebrow">PASSWORD GENERATOR</span><h3>Password acak</h3></div><span class="tool-icon">✳</span></div>
+            <div class="field"><label for="randomPasswordLength">Panjang password: <strong id="randomPasswordLengthLabel">24 karakter</strong></label><input id="randomPasswordLength" type="range" min="12" max="64" value="24"></div>
+            <div class="check-grid"><label class="check-option"><input type="checkbox" id="useUppercase" checked> Huruf besar (A–Z)</label><label class="check-option"><input type="checkbox" id="useLowercase" checked> Huruf kecil (a–z)</label><label class="check-option"><input type="checkbox" id="useNumbers" checked> Angka (0–9)</label><label class="check-option"><input type="checkbox" id="useSymbols" checked> Simbol</label></div>
+            <div class="action-row"><button type="button" class="btn btn-primary" id="createRandomPasswordBtn">Buat password</button><button type="button" class="btn btn-secondary" id="copyRandomPasswordBtn">Salin password</button></div>
+            <div class="field"><label for="randomPasswordOutput">Password hasil generator</label><div class="input-with-action"><input id="randomPasswordOutput" type="password" readonly placeholder="Password acak akan tampil di sini"><button type="button" class="btn btn-ghost" id="toggleRandomPassword">Lihat</button></div></div>
+          </section>
+          <section class="tool-card">
+            <div class="tool-card-heading"><div><span class="eyebrow">SECURE RANDOM BYTES</span><h3>Generator byte acak</h3></div><span class="tool-icon">⌘</span></div>
+            <div class="grid-two random-options"><div class="field"><label for="randomByteLength">Jumlah byte</label><input type="number" id="randomByteLength" min="1" max="64" value="32"></div><div class="field"><label for="randomByteFormat">Format output</label><select id="randomByteFormat"><option value="hex">Hexadecimal</option><option value="base64">Base64</option><option value="base64url">Base64 URL-safe</option></select></div></div>
+            <div class="action-row"><button type="button" class="btn btn-primary" id="createRandomBytesBtn">Generate random bytes</button><button type="button" class="btn btn-secondary" id="copyRandomBytesBtn">Salin output</button></div>
+            <div class="field"><label for="randomBytesOutput">Hasil byte acak</label><textarea id="randomBytesOutput" class="hash-output" readonly spellcheck="false" placeholder="Hasil random bytes..."></textarea></div>
+            <p class="field-hint">Jangan gunakan Math.random() untuk membuat kunci, token, atau password. Generator ini memakai crypto.getRandomValues().</p>
+          </section>
+        </section>
+
+        <section class="main-panel coming-soon-panel" id="panel-coming-soon" role="tabpanel" aria-labelledby="tab-coming-soon" hidden>
+          <div class="coming-soon-card">
+            <span class="eyebrow">NEXT FEATURE</span>
+            <h2>Coming Soon</h2>
+            <p>Fitur berikutnya sedang dipersiapkan dan akan hadir pada pembaruan Crypto Vault selanjutnya.</p>
+            <span class="coming-soon-tag">UNDER DEVELOPMENT</span>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

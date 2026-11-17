@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Alat pengolah foto dan PDF langsung di browser: kompres foto dan PDF, konversi PDF ke gambar, dan gambar ke PDF.">
+  <title>File Tools - Image & PDF Tools</title>
+  <link rel="icon" type="image/png" href="assets/files.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><i data-lucide="files"></i></span>
+        <span class="brand-name">FileTools</span>
+      </a>
+      <div class="topbar-right">
+        <span class="privacy-label"><i data-lucide="shield-check"></i> Diproses di browser</span>
+        <a class="back-link" id="backLink" href="../index.html"><span>Kembali</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Daftar alat">
+      <div class="sidebar-heading">ALAT PENGOLAH FILE</div>
+      <nav class="tool-nav">
+        <button class="nav-item active" type="button" data-tool="photo">
+          <span class="nav-icon purple"><i data-lucide="image"></i></span>
+          <span><b>Kompres Foto</b><small>Optimalkan ukuran gambar</small></span>
+        </button>
+        <button class="nav-item" type="button" data-tool="pdf-compress">
+          <span class="nav-icon red"><i data-lucide="file-down"></i></span>
+          <span><b>Kompres PDF</b><small>Kecilkan ukuran dokumen</small></span>
+        </button>
+        <button class="nav-item" type="button" data-tool="pdf-image">
+          <span class="nav-icon blue"><i data-lucide="file-image"></i></span>
+          <span><b>PDF ke Gambar</b><small>Ubah halaman menjadi JPG/PNG</small></span>
+        </button>
+        <button class="nav-item" type="button" data-tool="image-pdf">
+          <span class="nav-icon green"><i data-lucide="images"></i></span>
+          <span><b>Gambar ke PDF</b><small>Satukan gambar menjadi PDF</small></span>
+        </button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-icon"><i data-lucide="lock-keyhole"></i></span>
+        <div><b>Privasi file</b><p>File diproses secara lokal di browser dan tidak dikirim ke server website.</p></div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <div class="workspace-heading">
+        <div>
+          <div class="eyebrow" id="eyebrow">IMAGE TOOLS</div>
+          <h1 id="pageTitle">Kompres Foto</h1>
+          <p id="pageDescription">Kurangi ukuran foto dengan tetap menjaga kualitas visualnya.</p>
+        </div>
+        <div class="secure-chip"><i data-lucide="check-circle-2"></i> Gratis digunakan</div>
+      </div>
+      <div class="dependency-banner" id="dependencyBanner" role="status" aria-live="polite">
+        <span class="dependency-dot"></span>
+        <span id="dependencyText">Memeriksa pustaka alat...</span>
+      </div>
+
+      <!-- 1. PHOTO COMPRESS -->
+      <section class="tool-panel active" id="panel-photo" data-panel="photo">
+        <div class="panel-card">
+          <div class="card-heading">
+            <div class="feature-icon purple"><i data-lucide="image-down"></i></div>
+            <div><h2>Kompres Foto</h2><p>Unggah satu atau beberapa gambar sekaligus.</p></div>
+          </div>
+          <label class="dropzone" id="photoDropzone" for="photoInput">
+            <input id="photoInput" type="file" accept="image/*,.heic,.heif,.tif,.tiff,.bmp,.svg,.avif" multiple hidden>
+            <span class="upload-icon"><i data-lucide="cloud-upload"></i></span>
+            <strong>Tarik foto ke sini atau <em>pilih file</em></strong>
+            <span class="drop-hint">JPG, JPEG, PNG, WebP, GIF, BMP, SVG, AVIF, TIFF, HEIC/HEIF*</span>
+            <span class="drop-hint smaller">Bisa memilih lebih dari satu foto dalam satu proses.</span>
+          </label>
+          <div class="selected-files hidden" id="photoFilesWrap">
+            <div class="selected-head"><b>Foto yang dipilih</b><button class="text-button" id="clearPhotos" type="button">Hapus semua</button></div>
+            <div id="photoFileList" class="file-list"></div>
+          </div>
+          <div class="settings-grid photo-settings">
+            <div class="field-group">
+              <label for="photoFormat">Format hasil</label>
+              <select id="photoFormat" class="field-control">
+                <option value="original">Ikuti format asli (jika didukung)</option>
+                <option value="image/jpeg">JPG / JPEG</option>
+                <option value="image/webp">WebP</option>
+                <option value="image/png">PNG</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="photoMaxDim">Batas sisi terpanjang</label>
+              <select id="photoMaxDim" class="field-control">
+                <option value="0">Pertahankan dimensi asli</option>
+                <option value="2560">Maksimal 2560 px</option>
+                <option value="1920" selected>Maksimal 1920 px</option>
+                <option value="1400">Maksimal 1400 px</option>
+                <option value="1000">Maksimal 1000 px</option>
+              </select>
+            </div>
+            <div class="field-group full-field">
+              <div class="range-heading"><label for="photoQuality">Kualitas kompresi</label><b id="photoQualityValue">75%</b></div>
+              <input id="photoQuality" class="range-control" type="range" min="25" max="95" step="1" value="75">
+              <div class="range-labels"><span>Ukuran lebih kecil</span><span>Kualitas lebih tinggi</span></div>
+              <small class="field-note">Kualitas berpengaruh pada JPG/WebP. PNG disimpan secara lossless; pengurangan ukuran utamanya melalui dimensi gambar.</small>
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" id="photoProcess" type="button" disabled><i data-lucide="zap"></i> Kompres Foto</button>
+            <span class="action-hint">Untuk banyak foto, hasil akan diunduh sebagai ZIP.</span>
+          </div>
+          <div class="progress-wrap hidden" id="photoProgress"><div class="progress-copy"><span id="photoProgressText">Menyiapkan foto...</span><b id="photoProgressPercent">0%</b></div><div class="progress-track"><span id="photoProgressBar"></span></div></div>
+          <div class="result-box hidden" id="photoResult" aria-live="polite"></div>
+        </div>
+        <div class="info-strip"><i data-lucide="info"></i><p>*Dukungan format tergantung decoder browser. HEIC/HEIF dan TIFF dibantu oleh pustaka tambahan; format RAW kamera dan beberapa format khusus tidak didukung.</p></div>
+      </section>
+
+      <!-- 2. PDF COMPRESS -->
+      <section class="tool-panel" id="panel-pdf-compress" data-panel="pdf-compress">
+        <div class="panel-card">
+          <div class="card-heading">
+            <div class="feature-icon red"><i data-lucide="file-down"></i></div>
+            <div><h2>Kompres PDF</h2><p>Kecilkan ukuran dokumen dengan mengatur resolusi halaman.</p></div>
+          </div>
+          <label class="dropzone compact-drop" id="compressDropzone" for="compressInput">
+            <input id="compressInput" type="file" accept="application/pdf,.pdf" hidden>
+            <span class="upload-icon red-bg"><i data-lucide="file-plus-2"></i></span>
+            <strong>Tarik file PDF ke sini atau <em>pilih PDF</em></strong>
+            <span class="drop-hint">Pilih satu file PDF.</span>
+          </label>
+          <div class="file-summary hidden" id="compressFileSummary"></div>
+          <div class="field-group level-group">
+            <label for="pdfCompressLevel">Tingkat kompresi</label>
+            <select id="pdfCompressLevel" class="field-control">
+              <option value="extreme">Ekstrem — ukuran paling kecil</option>
+              <option value="high">Tinggi — lebih hemat</option>
+              <option value="medium" selected>Optimal — seimbang (disarankan)</option>
+              <option value="low">Rendah — kualitas lebih tinggi</option>
+            </select>
+          </div>
+          <div class="notice warning-notice"><i data-lucide="alert-triangle"></i><p><b>Perlu diketahui:</b> setiap halaman PDF dirender menjadi gambar agar ukuran bisa dikendalikan. Teks hasilnya tidak dapat dipilih, disalin, atau dicari; tautan, formulir, dan anotasi interaktif juga tidak dipertahankan. Dokumen yang sudah berisi teks sederhana kadang justru bisa menjadi lebih besar.</p></div>
+          <div class="action-row">
+            <button class="primary-button red-button" id="compressProcess" type="button" disabled><i data-lucide="minimize-2"></i> Kompres PDF</button>
+            <button class="secondary-button hidden" id="removeCompressFile" type="button">Ganti file</button>
+          </div>
+          <div class="progress-wrap hidden" id="compressProgress"><div class="progress-copy"><span id="compressProgressText">Memproses PDF...</span><b id="compressProgressPercent">0%</b></div><div class="progress-track red-track"><span id="compressProgressBar"></span></div></div>
+          <div class="result-box hidden" id="compressResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- 3. PDF TO IMAGE -->
+      <section class="tool-panel" id="panel-pdf-image" data-panel="pdf-image">
+        <div class="panel-card">
+          <div class="card-heading">
+            <div class="feature-icon blue"><i data-lucide="file-image"></i></div>
+            <div><h2>PDF ke Gambar</h2><p>Konversi setiap halaman PDF menjadi file gambar.</p></div>
+          </div>
+          <label class="dropzone compact-drop" id="pdfImageDropzone" for="pdfImageInput">
+            <input id="pdfImageInput" type="file" accept="application/pdf,.pdf" hidden>
+            <span class="upload-icon blue-bg"><i data-lucide="file-up"></i></span>
+            <strong>Tarik PDF ke sini atau <em>pilih file PDF</em></strong>
+            <span class="drop-hint">Jika PDF memiliki beberapa halaman, seluruh gambar akan dikemas menjadi ZIP.</span>
+          </label>
+          <div class="file-summary hidden" id="pdfImageFileSummary"></div>
+          <div class="settings-grid two-settings">
+            <div class="field-group"><label for="pdfImageFormat">Format gambar</label><select id="pdfImageFormat" class="field-control"><option value="jpeg">JPG</option><option value="png">PNG</option></select></div>
+            <div class="field-group"><label for="pdfImageDpi">Resolusi gambar</label><select id="pdfImageDpi" class="field-control"><option value="96">96 DPI — ringan</option><option value="150" selected>150 DPI — standar</option><option value="200">200 DPI — tinggi</option><option value="300">300 DPI — cetak</option></select></div>
+          </div>
+          <div class="action-row"><button class="primary-button blue-button" id="pdfImageProcess" type="button" disabled><i data-lucide="images"></i> Ubah ke Gambar</button><button class="secondary-button hidden" id="removePdfImageFile" type="button">Ganti file</button></div>
+          <div class="progress-wrap hidden" id="pdfImageProgress"><div class="progress-copy"><span id="pdfImageProgressText">Mengonversi halaman...</span><b id="pdfImageProgressPercent">0%</b></div><div class="progress-track blue-track"><span id="pdfImageProgressBar"></span></div></div>
+          <div class="result-box hidden" id="pdfImageResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- 4. IMAGE TO PDF -->
+      <section class="tool-panel" id="panel-image-pdf" data-panel="image-pdf">
+        <div class="panel-card">
+          <div class="card-heading">
+            <div class="feature-icon green"><i data-lucide="images"></i></div>
+            <div><h2>Gambar ke PDF</h2><p>Gabungkan beberapa gambar menjadi satu dokumen PDF.</p></div>
+          </div>
+          <label class="dropzone" id="imagePdfDropzone" for="imagePdfInput">
+            <input id="imagePdfInput" type="file" accept="image/*,.heic,.heif,.tif,.tiff,.bmp,.svg,.avif" multiple hidden>
+            <span class="upload-icon green-bg"><i data-lucide="image-plus"></i></span>
+            <strong>Tarik gambar ke sini atau <em>pilih beberapa gambar</em></strong>
+            <span class="drop-hint">Urutan halaman mengikuti urutan file yang dipilih.</span>
+          </label>
+          <div class="selected-files hidden" id="imagePdfFilesWrap"><div class="selected-head"><b>Gambar yang dipilih</b><button class="text-button" id="clearImagePdf" type="button">Hapus semua</button></div><div id="imagePdfFileList" class="file-list"></div></div>
+          <div class="settings-grid two-settings">
+            <div class="field-group"><label for="imagePdfPageSize">Ukuran halaman PDF</label><select id="imagePdfPageSize" class="field-control"><option value="a4" selected>A4 — pas di halaman</option><option value="original">Ukuran mengikuti gambar</option></select></div>
+            <div class="field-group"><label for="imagePdfOrientation">Orientasi A4</label><select id="imagePdfOrientation" class="field-control"><option value="auto" selected>Otomatis mengikuti gambar</option><option value="portrait">Potret</option><option value="landscape">Lanskap</option></select></div>
+          </div>
+          <div class="action-row"><button class="primary-button green-button" id="imagePdfProcess" type="button" disabled><i data-lucide="file-check-2"></i> Buat PDF</button></div>
+          <div class="progress-wrap hidden" id="imagePdfProgress"><div class="progress-copy"><span id="imagePdfProgressText">Membuat PDF...</span><b id="imagePdfProgressPercent">0%</b></div><div class="progress-track green-track"><span id="imagePdfProgressBar"></span></div></div>
+          <div class="result-box hidden" id="imagePdfResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <footer class="workspace-footer"><span>FileTools © 2026</span><span>Pengolah gambar & PDF sederhana</span></footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><i data-lucide="info"></i><span id="toastText"></span></div>
+
+  <!-- Pustaka dimuat bergantian dengan CDN cadangan. Aplikasi utama baru dijalankan setelah proses ini selesai. -->
+  <script>
+    (function () {
+      'use strict';
+      const libraries = [
+        { id: 'lucideScript', urls: [
+          'https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js',
+          'https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js'
+        ]},
+        { id: 'pdfjsScript', urls: [
+          'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+          'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js'
+        ]},
+        { id: 'pdfLibScript', urls: [
+          'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js',
+          'https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js'
+        ]},
+        { id: 'jszipScript', urls: [
+          'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
+          'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js'
+        ]},
+        { id: 'heicScript', urls: [
+          'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js',
+          'https://unpkg.com/heic2any@0.0.4/dist/heic2any.min.js'
+        ]},
+        { id: 'utifScript', urls: [
+          'https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.min.js',
+          'https://unpkg.com/utif@3.1.0/UTIF.min.js'
+        ]}
+      ];
+
+      function loadOne(library, index) {
+        if (index >= library.urls.length) return Promise.resolve(false);
+        return new Promise((resolve) => {
+          const script = document.createElement('script');
+          script.id = index === 0 ? library.id : `${library.id}Fallback`;
+          script.src = library.urls[index];
+          script.async = true;
+          script.onload = () => resolve(true);
+          script.onerror = () => {
+            script.remove();
+            loadOne(library, index + 1).then(resolve);
+          };
+          document.head.appendChild(script);
+        });
+      }
+
+      async function startFileWerk() {
+        await Promise.all(libraries.map((library) => loadOne(library, 0)));
+        const app = document.createElement('script');
+        app.src = 'script.js';
+        app.onload = () => {
+          if (!window.pdfjsLib && !window.PDFLib) {
+            const label = document.getElementById('dependencyText');
+            if (label) label.textContent = 'Pustaka PDF tidak berhasil dimuat. Periksa koneksi internet lalu muat ulang halaman.';
+          }
+        };
+        app.onerror = () => {
+          const label = document.getElementById('dependencyText');
+          if (label) label.textContent = 'File script.js tidak ditemukan. Pastikan file berada satu folder dengan index.html.';
+        };
+        document.body.appendChild(app);
+      }
+
+      startFileWerk();
+    })();
+  </script>
+
+</body>
+</html>
